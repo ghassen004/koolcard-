@@ -19,11 +19,11 @@ public class TableEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Min(value = 1, message = "Capacity must be at least 1")
+    @Min(value = 1, message = "La capacité doit être au moins de 1")
     @Column(nullable = false)
     private int capacity;
 
-    @NotNull(message = "Table status is required")
+    @NotNull(message = "Le statut de la table est requis")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TableStatus status;

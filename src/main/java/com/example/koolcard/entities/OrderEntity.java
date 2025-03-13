@@ -26,10 +26,9 @@ public class OrderEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus status;
-
     @ManyToOne
-    @JoinColumn(name = "table_id", nullable = false)
-    private TableEntity table;
+    @JoinColumn(name = "table_id")
+    private TableEntity table; // Peut être null si c'est une commande Delivery
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
